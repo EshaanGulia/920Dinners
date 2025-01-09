@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
-  Typography,
   Button,
   IconButton,
   Box,
@@ -13,6 +12,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { navButtons } from "../constants/constants";
 
 const NavBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -21,26 +21,29 @@ const NavBar = () => {
     setDrawerOpen(open);
   };
 
+ 
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: "#1976d2" }}>
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          {/* Logo or Brand Name */}
-          <Typography variant="h6" component="div">
-            Dinner Party
-          </Typography>
+      {/* Navigation Bar */}
+      <AppBar
+        position="fixed"
+        sx={{
+          background: "#1c1a1a", // Light grey with transparency
+          backdropFilter: "blur(10px)", // Optional: Blurred effect for a modern look
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", // Subtle shadow for depth
+          width: "100%",
+        }}
+      >
+        <Toolbar sx={{ justifyContent: "space-between", maxWidth: "1200px", margin: "0 auto" }}>
+          {/* Brand Name */}
 
           {/* Links for Desktop */}
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <Button color="inherit" sx={{ marginLeft: 2 }} href="#details">
-              Details
-            </Button>
-            <Button color="inherit" sx={{ marginLeft: 2 }} href="#menu">
-              Menu
-            </Button>
-            <Button color="inherit" sx={{ marginLeft: 2 }} href="#drinks">
-              Drinks
-            </Button>
+          <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}>
+            {navButtons.map(item => (
+                <Button key={item.id} color="inherit" sx={{ color: "white" }} href={item.href}>
+                {item.label}
+              </Button>
+            ))}
           </Box>
 
           {/* Hamburger Icon for Mobile */}
@@ -48,7 +51,7 @@ const NavBar = () => {
             edge="end"
             color="inherit"
             aria-label="menu"
-            sx={{ display: { sm: "none" } }}
+            sx={{ display: { sm: "none" }, color: "#333" }}
             onClick={toggleDrawer(true)}
           >
             <MenuIcon />
@@ -59,33 +62,11 @@ const NavBar = () => {
       {/* Drawer for Mobile Navigation */}
       <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
         <List sx={{ width: 250 }}>
-          {/* Home List Item */}
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#details" onClick={toggleDrawer(false)}>
-              <ListItemText primary="Home" />
+         {navButtons.map(item => ( <ListItem key={item.id} disablePadding>
+            <ListItemButton component="a" href={item.href} onClick={toggleDrawer(false)}>
+              <ListItemText primary={item.label} />
             </ListItemButton>
-          </ListItem>
-
-          {/* Menu List Item */}
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#menu" onClick={toggleDrawer(false)}>
-              <ListItemText primary="Menu" />
-            </ListItemButton>
-          </ListItem>
-
-          {/* Drinks List Item */}
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#drinks" onClick={toggleDrawer(false)}>
-              <ListItemText primary="Drinks" />
-            </ListItemButton>
-          </ListItem>
-
-          {/* Contact List Item */}
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#contact" onClick={toggleDrawer(false)}>
-              <ListItemText primary="Contact" />
-            </ListItemButton>
-          </ListItem>
+          </ListItem>))}
         </List>
       </Drawer>
     </>

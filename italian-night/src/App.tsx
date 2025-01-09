@@ -88,12 +88,12 @@ const App: React.FC = () => {
         </div>
 
         {/* Menu Section */}
-        <div id="menu">
+        <div id="menu" style={{ padding: 20}}>
           <MenuSection />
         </div>
 
         {/* Drinks Section */}
-        <div id="drinks">
+        <div id="drinks" style={{ padding: 20}}>
           <DrinksSection />
         </div>
       </div>

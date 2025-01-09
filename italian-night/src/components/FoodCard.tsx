@@ -1,10 +1,12 @@
-import { Card, CardMedia, CardContent, Typography, CardActionArea, Box } from "@mui/material";
+import { Card, CardMedia, CardContent, Typography, CardActionArea, Box, Chip, Stack } from "@mui/material";
+import Grid from '@mui/material/Grid2';
 
 const FoodCard = ({ title, descrption, imageUrl }: any) => {
   return (
     <Card
       sx={{
         width: 300,
+        height: 350,
         borderRadius: 3,
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", // Adds shadow for a "pop" effect
         transition: "transform 0.3s ease, box-shadow 0.3s ease", // Smooth hover effect
@@ -14,7 +16,6 @@ const FoodCard = ({ title, descrption, imageUrl }: any) => {
         },
       }}
     >
-      <CardActionArea>
         {/* Image Section */}
         <CardMedia
           component="img"
@@ -36,18 +37,24 @@ const FoodCard = ({ title, descrption, imageUrl }: any) => {
             padding: 2,
           }}
         >
-          {/* Title */}
-          <Typography
-            variant="h6"
-            sx={{
-              color: "#333", // Darker text for readability
-              fontWeight: "bold",
-              marginBottom: 1,
-              fontFamily: "'Playfair Display', serif", // Elegant font
-            }}
-          >
-            {title}
-          </Typography>
+          <Grid container spacing={1}>
+            <Grid size={8}>
+              {/* Title */}
+              <Typography
+                variant="h6"
+                sx={{
+                  color: "#333", // Darker text for readability
+                  fontWeight: "bold",
+                  marginBottom: 1,
+                  fontFamily: "'Playfair Display', serif", // Elegant font
+                }}
+              >
+                {title}
+              </Typography>
+
+            </Grid>
+          </Grid>
+
 
           {/* Description */}
           <Typography
@@ -62,7 +69,6 @@ const FoodCard = ({ title, descrption, imageUrl }: any) => {
             {descrption}
           </Typography>
         </CardContent>
-      </CardActionArea>
     </Card>
   );
 };
