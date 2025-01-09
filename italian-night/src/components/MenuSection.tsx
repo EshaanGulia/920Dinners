@@ -8,7 +8,7 @@ const MenuSection = () => {
             <h1 style={{ color: "white", textAlign: "center" }}>Menu</h1>
             <Grid container spacing={2}>
                 {menu.map((menuItem, index) => (
-                        <Grid size={3}>
+                        <Grid size={{ xs: 12, md: 3 }}>
                             <FoodCard
                                 key={`menuItem${menuItem.title}at${index}`}
                                 title={menuItem.title}
