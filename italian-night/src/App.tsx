@@ -1,4 +1,6 @@
+import React from 'react';
 import MenuComponent from './components/MenuComponent';
+import './App.css'; // Link the CSS file here
 
 function App() {
   return (
@@ -7,7 +9,7 @@ function App() {
         position: "relative", 
         textAlign: "center", 
         overflow: "hidden", 
-        height: "60vh" // Adjust the height for a more cinematic effect
+        height: "60vh" // Adjusts the hero image height
       }}>
         {/* Main Image */}
         <img 
@@ -17,22 +19,35 @@ function App() {
             width: "100%", 
             height: "100%", 
             objectFit: "cover", 
-            filter: "brightness(70%)", // Further darken for better text contrast
+            filter: "brightness(70%)", // Adds a dimming effect
           }} 
         />
-        
-        {/* Overlay Text */}
-        <div style={{ 
-          position: "absolute", 
-          top: "50%", 
-          left: "50%", 
-          transform: "translate(-50%, -50%)", 
-          color: "white", 
-          fontSize: "4em", 
-          fontWeight: "bold", 
-          textShadow: "4px 4px 8px rgba(0, 0, 0, 0.8)", 
-          fontFamily: "'Playfair Display', serif", // Adds a classic, elegant font
-          letterSpacing: "2px"
+
+        {/* Gradient Overlay */}
+        <div style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8))", // Adds the gradient effect
+          zIndex: 1
+        }} />
+
+        {/* Welcome Text */}
+        <div style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          color: "white",
+          fontSize: "4em",
+          fontWeight: "bold",
+          textShadow: "4px 4px 8px rgba(0, 0, 0, 0.8)",
+          fontFamily: "'Playfair Display', serif",
+          letterSpacing: "2px",
+          animation: "fadeIn 2s ease-in-out",
+          zIndex: 2
         }}>
           Welcome to Italy
         </div>
@@ -47,15 +62,17 @@ function App() {
           height: "4px",
           backgroundColor: "white",
           borderRadius: "2px",
-          opacity: 0.8
+          opacity: 0.8,
+          zIndex: 2
         }} />
       </div>
-      
+
+      {/* Menu Section */}
       <div style={{ 
         textAlign: "center", 
         alignContent: "center", 
         padding: "20px", 
-        backgroundColor: "#222", // Adds a sleek dark background for the menu section
+        backgroundColor: "#222", // Adds a dark background to the menu
         color: "white" 
       }}>
         <MenuComponent />
