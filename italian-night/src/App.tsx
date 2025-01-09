@@ -1,10 +1,17 @@
-import React from 'react';
-import MenuComponent from './components/MenuComponent';
-import './App.css'; // Link the CSS file here
+import React from "react";
+import NavBar from "./components/NavBar";
+import PartyDetails from "./components/PartyDetails";
+import MenuSection from "./components/MenuSection";
+import DrinksSection from "./components/DrinksSection";
+import "./App.css";
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
+      {/* Navigation Bar */}
+      <NavBar />
+
+      {/* Hero Section */}
       <div style={{ 
         position: "relative", 
         textAlign: "center", 
@@ -67,7 +74,7 @@ function App() {
         }} />
       </div>
 
-      {/* Menu Section */}
+      {/* Main Content */}
       <div style={{ 
         textAlign: "center", 
         alignContent: "center", 
@@ -75,10 +82,23 @@ function App() {
         backgroundColor: "#222", // Adds a dark background to the menu
         color: "white" 
       }}>
-        <MenuComponent />
+        {/* Party Details Section */}
+        <div id="details">
+          <PartyDetails />
+        </div>
+
+        {/* Menu Section */}
+        <div id="menu">
+          <MenuSection />
+        </div>
+
+        {/* Drinks Section */}
+        <div id="drinks">
+          <DrinksSection />
+        </div>
       </div>
     </>
   );
-}
+};
 
 export default App;
