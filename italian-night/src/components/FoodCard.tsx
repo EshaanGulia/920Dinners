@@ -1,4 +1,4 @@
-import { Card, CardMedia, CardContent, Typography, CardActionArea, Box, Chip, Stack } from "@mui/material";
+import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import Grid from '@mui/material/Grid2';
 
 const FoodCard = ({ title, descrption, imageUrl }: any) => {

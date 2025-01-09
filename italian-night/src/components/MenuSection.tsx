@@ -1,4 +1,3 @@
-import React from "react";
 import FoodCard from "./FoodCard";
 import { menu } from "../constants/constants";
 import Grid from '@mui/material/Grid2';
