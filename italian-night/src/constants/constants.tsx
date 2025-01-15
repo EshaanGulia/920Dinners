@@ -5,12 +5,12 @@ export const menu = [{
   },
   {
     title: "Caesar Salad",
-    description: "Caesar Salad: Crisp romaine, creamy Caesar dressing, Parmesan, and crunchy croutons. Prepared by Swarn",
+    description: "Caesar Salad: Crisp romaine, creamy Caesar dressing, Parmesan, and crunchy croutons.",
     imageUrl: "https://plus.unsplash.com/premium_photo-1700089483464-4f76cc3d360b?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     title: "Tiramisu Cake",
-    description: "this is tirimau cakeTiramisu Cake: Layers of espresso-soaked sponge, creamy mascarpone, and a dusting of cocoa: Created by Rish",
+    description: "this is tirimau cakeTiramisu Cake: Layers of espresso-soaked sponge, creamy mascarpone, and a dusting of cocoa",
     imageUrl: "https://images.unsplash.com/photo-1696487773642-d173e42fcaa1?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
