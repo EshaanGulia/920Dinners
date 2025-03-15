@@ -1,6 +1,6 @@
 export const menu = [{
     title: "Fettuccine Alfredo",
-    description: "Fettuccine Alfredo: Classic creamy Alfredo sauce with Parmesan, butter, and perfectly cooked fettuccine. Created by Head Chef: Arunima",
+    description: "Fettuccine Alfredo: Classic creamy Alfredo sauce with Parmesan, butter, and perfectly cooked fettuccine.",
     imageUrl: "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
@@ -20,7 +20,7 @@ export const menu = [{
   },
   {
     title: "Grilled Chicken Breast",
-    description: "Grilled Chicken breast will be cut, marinated and grilled by Eshaan",
+    description: "Grilled Chicken breast will be cut, marinated and grilled",
     imageUrl: "https://images.unsplash.com/photo-1517984055083-fd6e1e788e54?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
 ];
